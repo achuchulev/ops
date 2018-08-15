@@ -18,7 +18,8 @@ resource "null_resource" "helloWorld2" {
 }
 
 resource "null_resource" "helloMultiple" {
+  count = "${var.instance_count}"
   provisioner "local-exec" {
-    command = "echo hello word ${var.instance_count}"
+    command = "echo hello word ${count.index}"
   }
 }
