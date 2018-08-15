@@ -1,5 +1,5 @@
 # Count variable
 variable "instance_count" {
-  description = "Creates multiple resorces"
+  description = "Creates multiple resources"
   default = 2
 }
