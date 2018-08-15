@@ -16,3 +16,10 @@ resource "null_resource" "helloWorld2" {
     command = "echo hello word2"
   }
 }
+
+resource "null_resource" "helloMultiple" {
+  count = 2
+  provisioner "local-exec" {
+    command = "echo hello word ${count.index}"
+  }
+}
