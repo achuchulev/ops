@@ -17,9 +17,9 @@ resource "null_resource" "helloWorld2" {
   }
 }
 
+# Use count variable to create multiple instances
 resource "null_resource" "helloMultiple" {
-  count = 2
   provisioner "local-exec" {
-    command = "echo hello word ${count.index}"
+    command = "echo hello word ${var.instance_count.index}"
   }
 }
