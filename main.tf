@@ -1,4 +1,4 @@
-# We use this null_provider to simulate terraform real exec
+# We use this null_provider with hardcoded values
 resource "null_resource" "helloWorld" {
   provisioner "local-exec" {
     command = "echo hello word"
@@ -17,6 +17,7 @@ resource "null_resource" "helloWorld2" {
   }
 }
 
+# We use instance_count variable to create multiple resources with null_provider
 resource "null_resource" "helloMultiple" {
   count = "${var.instance_count}"
   provisioner "local-exec" {
